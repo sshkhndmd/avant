@@ -4,7 +4,7 @@ export default function Footer() {
       <div>© 2026 AVANT CONCEPTUAL BRAND</div>
       <div>
         <a
-          href="https://vk.com/your_profile"
+          href="https://vk.com/app54526408"
           target="_blank"
           rel="noopener noreferrer"
         >
