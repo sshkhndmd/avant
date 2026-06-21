@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api";
 
-const ROLES = ["CUSTOMER", "ADMIN", "PRODUCT_MANAGER", "SALES_MANAGER", "RETURNS_MANAGER"];
+const ROLES = ["CUSTOMER", "ADMIN", "PRODUCT_MANAGER", "SALES_MANAGER"];
 
 export default function AdminUsers() {
   const token = localStorage.getItem("token");
