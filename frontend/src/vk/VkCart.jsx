@@ -90,9 +90,16 @@ export default function VkCart() {
   };
 
   const onChange = (e) => {
-    const { name, value } = e.target;
-    setForm((p) => ({ ...p, [name]: value }));
-  };
+  const { name, value } = e.target;
+
+  setForm((p) => ({
+    ...p,
+    [name]:
+      name === "phone"
+        ? value.replace(/\D/g, "").slice(0, 11)
+        : value,
+  }));
+};
 
   const checkout = async () => {
     if (!token) {

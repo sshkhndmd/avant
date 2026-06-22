@@ -20,9 +20,16 @@ export default function Cart() {
   });
 
   const onChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
+  const { name, value } = e.target;
+
+  setForm((prev) => ({
+    ...prev,
+    [name]:
+      name === "phone"
+        ? value.replace(/\D/g, "").slice(0, 11)
+        : value,
+  }));
+};
 
   useEffect(() => {
     if (!token) {
