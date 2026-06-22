@@ -22,13 +22,21 @@ export default function Cart() {
   const onChange = (e) => {
   const { name, value } = e.target;
 
-  setForm((prev) => ({
-    ...prev,
-    [name]:
-      name === "phone"
-        ? value.replace(/\D/g, "").slice(0, 11)
-        : value,
-  }));
+  setForm((prev) => {
+    if (name === "phone") {
+      const digits = value.replace(/\D/g, "").slice(0, 11);
+
+      return {
+        ...prev,
+        phone: digits ? `+${digits}` : "",
+      };
+    }
+
+    return {
+      ...prev,
+      [name]: value,
+    };
+  });
 };
 
   useEffect(() => {
